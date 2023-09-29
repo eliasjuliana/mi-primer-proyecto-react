@@ -7,7 +7,7 @@ const Card =(props) =>{
     //jsx
     <article className='card'>
       <div className='card-header'>
-        <img src={imagen} alt="imagen" />
+        <img src={imagen} alt={`imagen de ${titulo}`} />
       </div>
     
       <div className='card-body'>
