@@ -3,16 +3,23 @@ import ReactDOM from 'react-dom/client'
 
 // import CardsGallery from './components/CardsGallery/CardsGallery.jsx'
 // import Counter from './components/Counter/Counter.jsx'
-import Message from './components/Message/Message'
+// import Form from './components/Form/Form.jsx'
+// import Form2 from './components/Form/Form2.jsx'
+import Form3 from './components/Form/Form3'
+// import Message from './components/Message/Message.jsx'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 import './index.css'
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* <CardsGallery /> */}
     {/* {< Counter />} */}
-    <Message />
+    {/* <Message /> */}
+    {/* <Form/> */}
+    {/* <Form2/> */}
+    <Form3/>
   </React.StrictMode>,
 );
