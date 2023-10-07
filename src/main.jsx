@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 // import CardsGallery from './components/CardsGallery/CardsGallery.jsx'
+import Contacts from './components/Contacts/Contacts'
 // import Counter from './components/Counter/Counter.jsx'
 // import Form from './components/Form/Form.jsx'
 // import Form2 from './components/Form/Form2.jsx'
@@ -13,6 +14,7 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 import './index.css'
 
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* <CardsGallery /> */}
@@ -20,6 +22,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     {/* <Message /> */}
     {/* <Form/> */}
     {/* <Form2/> */}
-    <Form3/>
+    {/* <Form3/> */}
+    <Contacts />
   </React.StrictMode>,
 );

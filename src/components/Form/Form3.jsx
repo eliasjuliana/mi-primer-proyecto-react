@@ -1,36 +1,14 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 
-import List from './List.jsx';
 import { getRandomNumber } from '../helpers/helpers.js';
+import { isValidDataContacts } from '../helpers/validators.js';
 
-const Form3 = () => {
-  const [contacts, setContacts] = useState([]);
-
+const Form3 = (props) => {
+  const {setContacts} = props;
+  
   const nameRef = useRef();
   const phoneRef = useRef();
   const emailRef = useRef();
-
-  const isValidData = (name, phone, email) => {
-    // name
-    if (name.trim().length < 2) {
-      return false;
-    }
-
-    // phone
-    if (isNaN(Number(phone))) {
-      return false;
-    }
-
-    // email
-    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!regex.test(email)) {
-      return false;
-    }
-
-    // todo ok
-    return true;
-  };
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -39,9 +17,9 @@ const Form3 = () => {
     const phone = phoneRef.current.value;
     const email = emailRef.current.value;
 
-    if (isValidData(name, phone, email)) {
+    if (isValidDataContacts(name, phone, email)) {
       alert('Felicidades!');
-      setContacts([
+      setContacts((contacts)=>[
         ...contacts,
         {
           id: getRandomNumber(0, 500),
@@ -96,35 +74,10 @@ const Form3 = () => {
       <button type='submit' className='btn btn-danger mt-3'>
         Enviar
       </button>
-      <List contacts={contacts} />
     </form>
   );
 };
 export default Form3;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import { useRef, useState } from "react";
 // import { getRandomNumber } from "../helpers/helpers.js";
