@@ -7,9 +7,10 @@ const List = (props) => {
     console.log(contacts);
   return (
     <ul>
-        {contacts.map((contact) => (
-                <Item key={contact.id} contact={contact} />
-        ))}
+      {contacts.length === 0 ? <p>No hay contactos</p> : null}
+      {contacts.map((contact) => (
+              <Item key={contact.id} contact={contact} />
+      ))}
     </ul>
   )
 }

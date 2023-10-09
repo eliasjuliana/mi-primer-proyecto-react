@@ -1,11 +1,19 @@
 import List from "../Form/List"
 import Form3 from "../Form/Form3"
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+//extraigo los contactos
+
+const contactsLS =  JSON.parse(localStorage.getItem('contacts')) || [];
 
 
 const Contactos = () => {
-  const [contacts, setContacts] = useState([]);
+  const [contacts, setContacts] = useState(contactsLS);
+
+  useEffect(()=>{
+    localStorage.setItem('contacts', JSON.stringify(contacts))
+  }, [contacts])
 
   return (
     <>
