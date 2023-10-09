@@ -1,6 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+import { Toaster } from 'sonner'
+
 // import CardsGallery from './components/CardsGallery/CardsGallery.jsx'
 // import Contacts from './components/Contacts/Contacts'
 // import Counter from './components/Counter/Counter.jsx'
@@ -9,18 +13,22 @@ import ReactDOM from 'react-dom/client'
 // import Form3 from './components/Form/Form3'
 // import HookForm from './components/Form/HookForm.jsx'
 // import Message from './components/Message/Message.jsx'
-import Normalfetch from './components/NormalFetch/Normalfetch'
+// import Normalfetch from './components/NormalFetch/Normalfetch'
+import TQueryFetch from './components/TQueryFetch/TQueryFetch'
+
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 import './index.css'
 
+const queryClient = new QueryClient()
 
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <CardsGallery /> */}
+    <QueryClientProvider client={queryClient}>
+{/* <CardsGallery /> */}
     {/* {< Counter />} */}
     {/* <Message /> */}
     {/* <Form/> */}
@@ -28,6 +36,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     {/* <Form3/> */}
     {/* <Contacts /> */}
     {/* <HookForm/> */}
-    <Normalfetch/>
+    {/* <Normalfetch/> */}
+    <TQueryFetch/>
+    <Toaster richColors/>
+    </QueryClientProvider>
+    
   </React.StrictMode>,
 );
